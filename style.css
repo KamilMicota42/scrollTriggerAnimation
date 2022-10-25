@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.boxa{
+    position:relative;
+    height: 20vh;
+    width: 20vh;
+    background-color: rebeccapurple;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.boxb{
+    position:relative;
+    height: 20vh;
+    width: 20vh;
+    background-color: rebeccapurple;
+    text-align: center;
+    margin-top: 100vh;
+}
+
+.boxc{
+    position:relative;
+    height: 20vh;
+    width: 20vh;
+    background-color: rebeccapurple;
+    text-align: center;
+    margin-top: 100vh;
+}

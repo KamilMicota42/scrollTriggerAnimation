@@ -7,17 +7,26 @@ gsap.registerPlugin(ScrollTrigger)
 
 // key words: play pause resume reverse restart reset complete none
 
+// pinned
+
+ScrollTrigger.defaults({
+    markers: true
+})
+
 gsap.from('.boxa', {
     scrollTrigger: {
         trigger: ".boxa",
         start: 'top top',
-        end: 'bottom top',
+        end: '400vh top',
         toggleActions: "play pause reverse pause",
-        markers: true
+        pin: true
     },
     duration: 1,
-    rotation: 360,
-    x: '90vw'
+    rotation: 180,
+    x: '90vw',
+
+    id: 'Box_c'
+
 })
 
 //default - start: 'top center' 
@@ -36,10 +45,32 @@ gsap.from(".boxb", {
         trigger: ".boxb",
         start: 'center bottom',
         end: 'center top',
-        markers: true,
-        scrub: true
+        scrub: 1
     },
     duration: 3,
     rotation: 360,
-    x: '90vw'
+    x: '90vw',
+    
+    id: 'Box_c',
+
+})
+
+//callbacks
+
+ScrollTrigger.create({
+    trigger: ".boxc",
+    start: 'top center',
+    end: 'bottom center',
+    scrub: 1,
+    onEnter: () => console.log('enter'),
+    onLeave: () => console.log('leave'),
+    onEnterBack: () => console.log('enter back'),
+    onLeaveBack: () => console.log('leave back'),
+
+    onUpdate: (self) => console.log('update: ', self.progress.toFixed(3)),
+
+    toggleClass: 'active',
+
+    id: 'Box_c',
+
 })
